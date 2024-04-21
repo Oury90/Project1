@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashbord</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h3 class="head-container">Let's find something for you to do ✌️</h3>
+        <form action="/post" method="post">
+            <select name="education">
+                <option value="recreational">recreational</option>
+                <option value="social">social</option>
+                <option value="charity">charity</option>
+                <option value="cooking">cooking</option>
+                <option value="relaxation">relaxation</option>
+                <option value="busywork">busywork</option>
+            </select>
+            <select name="number">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+            </select>
+            <button>Go</button>
+        </form>
+        <div class="second-contain">
+            <% if(locals.dataEl){ %>
+                <h4><%= dataEl.activity %></h4>
+                <div class="footer">
+                    <p><%= dataEl.type %></p>
+                    <p>participants :<%= dataEl.participants %></p>
+                </div>
+            <% }else{ %>
+                <p class="error"><%= error %></p>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
